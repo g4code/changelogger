@@ -1,0 +1,26 @@
+{
+  "name": "g5-changelog",
+  "version": "0.0.1",
+  "description": "Changelog generator for git repositories",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gomboc/g5-changelog.git"
+  },
+  "keywords": [
+    "changelog",
+    "git",
+    "generator"
+  ],
+  "author": "Drasko Gomboc <drasko.gomboc@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/gomboc/g5-changelog/issues"
+  }
+}
