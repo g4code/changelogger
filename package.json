@@ -1,5 +1,5 @@
 {
-  "name": "g5-changelog",
+  "name": "changelogger",
   "version": "0.0.1",
   "description": "Changelog generator for git repositories",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gomboc/g5-changelog.git"
+    "url": "git://github.com/gomboc/changelogger.git"
   },
   "keywords": [
     "changelog",
@@ -21,6 +21,10 @@
   "author": "Drasko Gomboc <drasko.gomboc@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/gomboc/g5-changelog/issues"
+    "url": "https://github.com/gomboc/changelogger/issues"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
   }
 }
