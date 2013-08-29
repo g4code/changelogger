@@ -4,10 +4,10 @@
  * Module dependencies.
  */
 
-var program     = require('commander');
-var packageData = require('../package.json');
+var program     = require('commander'),
+    packageData = require(__dirname + '/../package.json');
 
-program.version('x.x.x')
+program.version(packageData.version)
        .parse(process.argv);
 
 console.log('changelogger bin');
