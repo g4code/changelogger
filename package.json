@@ -26,5 +26,11 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "dependencies": {
+    "commander": "*"
+  },
+  "bin": {
+    "changelogger": "./bin/changelogger.js"
   }
 }

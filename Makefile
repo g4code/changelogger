@@ -1,16 +1,18 @@
 REPORTER = dot
+MOCHA_PATH = ./node_modules/.bin/mocha
 
 install:
-	npm install
+	@npm install
 
 test:
-	@NODE_ENV=test ./node_modules/.bin/mocha \
-		--reporter $(REPORTER) \
+	@NODE_ENV=test $(MOCHA_PATH) \
+		--reporter $(REPORTER)
 
 test-w:
-	@NODE_ENV=test ./node_modules/.bin/mocha \
+	@NODE_ENV=test $(MOCHA_PATH) \
 		--reporter $(REPORTER) \
 		--growl \
 		--watch
 
-.PHONY: install test test-w
+.PHONY: install
+.PHONY: test test-w
