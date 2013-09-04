@@ -2,3 +2,5 @@
 node_modules
 npm-debug.log
 changelogger*.tgz
+.DS_Store
+.settings/*

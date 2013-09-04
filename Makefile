@@ -1,4 +1,3 @@
-REPORTER = dot
 MOCHA_PATH = ./node_modules/.bin/mocha
 
 install:
@@ -6,13 +5,20 @@ install:
 
 test:
 	@NODE_ENV=test $(MOCHA_PATH) \
-		--reporter $(REPORTER)
+		--recursive \
+		--reporter dot
+		
+test-spec:
+	@NODE_ENV=test $(MOCHA_PATH) \
+		--recursive \
+		--reporter spec
 
 test-w:
 	@NODE_ENV=test $(MOCHA_PATH) \
-		--reporter $(REPORTER) \
+		--recursive \
+		--reporter dot \
 		--growl \
 		--watch
 
 .PHONY: install
-.PHONY: test test-w
+.PHONY: test test-spec test-w

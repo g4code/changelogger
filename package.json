@@ -28,7 +28,8 @@
     "chai": "*"
   },
   "dependencies": {
-    "commander": "*"
+    "commander": "*",
+    "underscore": "*"
   },
   "bin": {
     "changelogger": "./bin/changelogger.js"
