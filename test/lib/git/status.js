@@ -5,22 +5,29 @@ var should = require('chai').should(),
 describe('GitStatus', function(){
 	
 	describe('exec', function(){
+		
 	    it('should return true if dir is a git repo', function(done){
-	    	var gitStatus = new GitStatus("./");
-	    	gitStatus.exec();
-	    	gitStatus.on("exec", function(isGitRepo){
-	    		isGitRepo.should.be.true;
-	    		done();
-	    	});
+	    	
+	    	var gitStatus = new GitStatus();
+	    	
+	    	gitStatus.setRepoPath("./")
+	    			 .exec()
+	    			 .on("exec", function(isGitRepo){
+	    				 isGitRepo.should.be.true;
+	    				 done();
+	    			 });	
 	    });
 	    
 	    it('should return false if dir is not a git repo', function(done){
-	    	var gitStatus = new GitStatus("/");
-	    	gitStatus.exec();
-	    	gitStatus.on("exec", function(isGitRepo){
-	    		isGitRepo.should.be.false;
-	    		done();
-	    	});
+
+	    	var gitStatus = new GitStatus();
+	    	
+	    	gitStatus.setRepoPath("/")
+	    		     .exec()
+	    		     .on("exec", function(isGitRepo){
+	    		    	 isGitRepo.should.be.false;
+	    		    	 done();
+	    		     });
 	    });
 	});
 	
