@@ -3,6 +3,9 @@ MOCHA_PATH = ./node_modules/.bin/mocha
 install:
 	@npm install
 
+pack:
+	@npm pack
+
 test:
 	@NODE_ENV=test $(MOCHA_PATH) \
 		--recursive \
@@ -20,5 +23,5 @@ test-w:
 		--growl \
 		--watch
 
-.PHONY: install
+.PHONY: install pack
 .PHONY: test test-spec test-w
