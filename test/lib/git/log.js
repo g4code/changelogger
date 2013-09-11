@@ -14,4 +14,12 @@ describe("GitLog", function(){
                   });
         });
     });
+
+    describe("getPrettyFormat", function(){
+        it("should return git pretty format string", function(){
+            var gitLog = new GitLog();
+            gitLog.getPrettyFormat().should.be.a("string");
+            gitLog.getPrettyFormat().should.equal("%h %H %an %ad %s")
+        });
+    });
 });
