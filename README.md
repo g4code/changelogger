@@ -1,7 +1,10 @@
-changelogger
-============
+# changelogger
 
-Git changelog generator
+> Git changelog generator - [nodejs](http://nodejs.org) library
+
+## Install
+
+    $ npm install -g changelogger
 
 ## License
 
