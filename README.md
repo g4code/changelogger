@@ -8,7 +8,7 @@
 
 ## Usage
 
-    Usage: changelogger.js [options] [dir]
+    Usage: changelogger [options] [dir]
 
     Options:
 
