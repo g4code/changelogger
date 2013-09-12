@@ -1,6 +1,6 @@
 {
   "name": "changelogger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Changelog generator for git repositories",
   "main": "index.js",
   "directories": {
