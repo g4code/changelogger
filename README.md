@@ -6,6 +6,16 @@
 
     $ npm install -g changelogger
 
+## Usage
+
+    Usage: changelogger.js [options] [dir]
+
+    Options:
+
+        -h, --help     output usage information
+        -V, --version  output the version number
+
+
 ## License
 
 (The MIT License)
