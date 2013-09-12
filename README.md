@@ -11,7 +11,6 @@
     Usage: changelogger [options] [dir]
 
     Options:
-
         -h, --help     output usage information
         -V, --version  output the version number
 
