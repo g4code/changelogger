@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var App			= require("../lib/app"),
-	program     = require("commander"),
+var App         = require("../lib/app"),
+    program     = require("commander"),
     packageData = require(__dirname + "/../package.json");
 
 program.version(packageData.version)
