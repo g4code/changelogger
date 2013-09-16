@@ -5,13 +5,24 @@ var should = require("chai").should(),
 describe("Git", function(){
 
     describe("status", function(){
+
         it("should return true if current folder is git repo", function(done){
+
             var git = new Git();
             git.setFullPath("./")
                .status(function(isGitRepo){
                    isGitRepo.should.be.true;
                    done();
                });
+        });
+    });
+
+    describe("onStatus", function(){
+
+        if("should call log method", function(){
+
+            var git = new Git();
+
         });
     });
 
