@@ -6,16 +6,39 @@ describe("GitTag", function(){
 
     describe("exec", function(done){
 
-        it("should return git tag string", function(done){
+        it("should return git tag array", function(done){
 
             var gitTag = new GitTag();
             gitTag.setRepoPath("./")
                   .exec()
                   .on("exec", function(tags){
-                      tags.should.be.a("string");
+                      tags.should.be.an("array");
                       done();
                   });
         });
+    });
 
+    describe("splitRawDataToTags", function(){
+
+        it("should create tags array", function(){
+
+            var gitTag = new GitTag();
+            gitTag.setRawData("v0.0.1\nv0.0.2")
+                  .splitRawDataToTags();
+            gitTag.tags.should.be.an("array");
+            gitTag.tags.length.should.equal(2);
+        });
+    });
+
+    describe("filterTags", function(){
+
+        it("should remove empty array element", function(){
+
+            var gitTag = new GitTag();
+            gitTag.tags = ["v1", ""];
+            gitTag.filterTags();
+            gitTag.tags.length.should.be.equal(1);
+            gitTag.tags[0].should.equal("v1");
+        });
     });
 });

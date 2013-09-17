@@ -23,20 +23,22 @@ describe("Git", function(){
 
     describe("onStatus", function(){
 
-        it("should call log method", function(){
+        it("should call tag method", function(done){
 
             var git = new Git();
-            git.log = function(){
+            git.tag = function(){
                 "test".should.be.ok;
+                done();
             };
             git.onStatus(true);
         });
 
-        it("should call notGitRepo method", function(){
+        it("should call notGitRepo method", function(done){
 
             var git = new Git();
             git.notGitRepo = function(){
                 "test".should.be.ok;
+                done();
             };
             git.onStatus(false);
         });
@@ -69,16 +71,6 @@ describe("Git", function(){
             git.onLog([]);
         });
 
-        it("should call tag method", function(done){
-
-            var git = new Git();
-            git.tag = function(){
-                "test".should.be.ok;
-                done();
-            };
-            git.onLog(commitsFixture);
-        });
-
         it("should set commits", function(){
 
             var git = new Git();
@@ -90,11 +82,11 @@ describe("Git", function(){
 
     describe("tag", function(){
 
-        it("should return tag string", function(done){
+        it("should return tag array", function(done){
 
             var git = new Git();
             git.onTag = function(tags){
-                tags.should.be.a("string");
+                tags.should.be.a("array");
                 done();
             };
             git.setRepoPath("./")
