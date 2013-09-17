@@ -1,5 +1,6 @@
 
 var should         = require("chai").should(),
+    _              = require("underscore"),
     Git            = require("../../lib/git"),
     commitsFixture = require("../fixtures/commits"),
     tagsFixture    = require("../fixtures/tags");
@@ -43,12 +44,12 @@ describe("Git", function(){
 
     describe("log", function(){
 
-        it("should return commit array", function(done){
+        it("should return commit object", function(done){
 
             var git = new Git();
             git.onLog = function(commits){
-                commits.should.be.an("array");
-                commits[0].should.be.an("object");
+                commits.should.be.an("object");
+                _.values(commits)[0].should.be.an("object");
                 done();
             };
             git.setRepoPath("./")

@@ -1,4 +1,6 @@
+
 var should = require("chai").should(),
+    _      = require("underscore"),
     GitLog = require("../../../lib/git/log");
 
 describe("GitLog", function(){
@@ -14,13 +16,13 @@ describe("GitLog", function(){
 
 
     describe("exec", function(){
-        it("should return commit log string", function(done){
+        it("should return commit objects", function(done){
             var gitLog = new GitLog();
             gitLog.setRepoPath("./")
                   .exec()
-                  .on("exec", function(log){
-                      log.should.be.an("array");
-                      log[0].should.be.an("object");
+                  .on("exec", function(commits){
+                      commits.should.be.an("object");
+                      _.values(commits)[0].should.be.an("object");
                       done();
                   });
         });
@@ -48,10 +50,10 @@ describe("GitLog", function(){
             var gitLog = new GitLog();
             gitLog.setRawData("aaa<#/#>bbb")
                   .splitRawDataToCommits();
-            gitLog.commits.should.be.an("array");
-            gitLog.commits.length.should.equal(2);
-            gitLog.commits[0].should.equal("aaa");
-            gitLog.commits[1].should.equal("bbb");
+            gitLog.rawCommits.should.be.an("array");
+            gitLog.rawCommits.length.should.equal(2);
+            gitLog.rawCommits[0].should.equal("aaa");
+            gitLog.rawCommits[1].should.equal("bbb");
         });
     });
 
@@ -65,9 +67,9 @@ describe("GitLog", function(){
     describe("parseCommitData", function(){
         it("should create commit object literal from a raw commit string", function(){
             var gitLog = new GitLog();
-            gitLog.commits = [rawCommitData];
+            gitLog.rawCommits = [rawCommitData];
             gitLog.parseCommitData();
-            JSON.stringify(gitLog.commits[0]).should.equal(JSON.stringify(commitDataObj));
+            JSON.stringify(gitLog.rawCommits[0]).should.equal(JSON.stringify(commitDataObj));
         });
     });
 });
