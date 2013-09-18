@@ -86,7 +86,8 @@ describe("Git", function(){
 
             var git = new Git();
             git.onTag = function(tags){
-                tags.should.be.a("array");
+                this.tag.tags.should.equal(tags);
+                this.tag.tags.should.be.a("array");
                 done();
             };
             git.setRepoPath("./")
@@ -98,9 +99,7 @@ describe("Git", function(){
 
         it("should set tags", function(){
 
-            var git = new Git();
-            git.onTag(tagsFixture);
-            git.tags.should.equal(tagsFixture);
+
         });
     });
 
