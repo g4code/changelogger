@@ -41,4 +41,15 @@ describe("GitTag", function(){
             gitTag.tags[0].should.equal("v1");
         });
     });
+
+    describe("hasTags", function(){
+
+        it("should return true if repo has tags", function(){
+            var gitTag = new GitTag();
+            gitTag.tags = ["v1", "v2"];
+            gitTag.hasTags().should.be.true;
+            gitTag.tags = [];
+            gitTag.hasTags().should.be.false;
+        });
+    });
 });
