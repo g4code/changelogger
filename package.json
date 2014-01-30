@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "commander": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "evento": "*",
+    "informer": "*"
   },
   "bin": {
     "changelogger": "./bin/changelogger.js"
