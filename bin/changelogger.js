@@ -4,14 +4,18 @@
  * Module dependencies.
  */
 
-var App         = require("../lib/app"),
-    program     = require("commander"),
-    packageData = require(__dirname + "/../package.json");
+var Changelogger = require("../lib/changelogger"),
+    program      = require("commander"),
+    packageData  = require(__dirname + "/../package.json");
 
 program.version(packageData.version)
        .usage("[options] [dir]")
+       .option('-d, --destination <n>', 'destination directory path')
+       .option('-t, --type <n>', 'output type (json, html)')
        .parse(process.argv);
 
-var app = new App();
-app.setArgs(program.args)
-   .init();
+var changelogger = new Changelogger();
+changelogger.request.args        = program.args;
+changelogger.request.destination = program.destination;
+changelogger.request.type        = program.type;
+changelogger.run();
