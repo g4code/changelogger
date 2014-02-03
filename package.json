@@ -31,7 +31,8 @@
     "commander": "*",
     "underscore": "*",
     "evento": "*",
-    "informer": "*"
+    "informer": "*",
+    "mustache": "*"
   },
   "bin": {
     "changelogger": "./bin/changelogger.js"

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Changelog</title>
+    </head>
+    <body>
+        <h1>Changelog</h1>
+        <table>
+            {{#commits}}
+                <tr>
+                    <td>{{abbreviatedHash}}</td>
+                    <td>{{authorName}}</td>
+                    <td>{{authorDate}}</td>
+                    <td>{{subject}}</td>
+                    <td>{{tag}}</td>
+                </tr>
+            {{/commits}}
+        </table>
+    </body>
+</html>
