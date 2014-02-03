@@ -1,6 +1,6 @@
 {
   "name": "changelogger",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Changelog generator for git repositories",
   "main": "index.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gomboc/changelogger.git"
+    "url": "git://github.com/g4code/changelogger.git"
   },
   "keywords": [
     "changelog",
@@ -21,7 +21,7 @@
   "author": "Drasko Gomboc <drasko.gomboc@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gomboc/changelogger/issues"
+    "url": "https://github.com/g4code/changelogger/issues"
   },
   "devDependencies": {
     "mocha": "*",

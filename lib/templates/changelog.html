@@ -4,13 +4,19 @@
         <title>Changelog</title>
         <meta charset="utf-8" />
         <style>
-            #wrapper {
-                margin: 0 auto;
-                width: 90%;
+            h1 {
+                border-bottom: 1px #ccc solid;
+                padding: 0 0 5px;
             }
             table td {
                 border-bottom: 1px #ccc solid;
                 padding: 5px 15px 5px 0;
+            }
+            table td.nowrap {
+                white-space: nowrap;
+            }
+            table td.desc {
+                width: 100%;
             }
             a {
                 color: #4183c4;
@@ -19,11 +25,22 @@
             a:hover {
                 text-decoration: underline;
             }
+            #wrapper {
+                margin: 0 auto;
+                width: 90%;
+            }
+            #footer {
+                font-size: 0.7em;
+                margin: 20px 0;
+                padding: 10px 0 0;
+            }
         </style>
     </head>
     <body>
         <div id="wrapper">
-            <h1>Changelog</h1>
+            <div id="header">
+                <h1>Changelog</h1>
+            </div>
             <ul>
                 {{#tags}}
                     <li><a href="#{{.}}">{{.}}</a></li>
@@ -41,12 +58,15 @@
                     {{/tag}}
                     <tr>
                         <td title="{{hash}}">{{abbreviatedHash}}</td>
-                        <td>{{authorName}}</td>
-                        <td>{{subject}}</td>
-                        <td>{{date}}</td>
+                        <td class="nowrap">{{authorName}}</td>
+                        <td class="desc">{{subject}}</td>
+                        <td class="nowrap">{{date}}</td>
                     </tr>
                 {{/commits}}
             </table>
+            <div id="footer">
+                Powered by <a href="https://github.com/g4code/changelogger">changelogger</a>
+            </div>
         </div>
     </body>
 </html>
