@@ -32,7 +32,8 @@
     "underscore": "*",
     "evento": "*",
     "informer": "*",
-    "mustache": "*"
+    "mustache": "*",
+    "moment": "*"
   },
   "bin": {
     "changelogger": "./bin/changelogger.js"

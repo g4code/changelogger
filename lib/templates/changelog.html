@@ -1,19 +1,52 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Changelog</title>
+        <meta charset="utf-8" />
+        <style>
+            #wrapper {
+                margin: 0 auto;
+                width: 90%;
+            }
+            table td {
+                border-bottom: 1px #ccc solid;
+                padding: 5px 15px 5px 0;
+            }
+            a {
+                color: #4183c4;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
     <body>
-        <h1>Changelog</h1>
-        <table>
-            {{#commits}}
-                <tr>
-                    <td>{{abbreviatedHash}}</td>
-                    <td>{{authorName}}</td>
-                    <td>{{authorDate}}</td>
-                    <td>{{subject}}</td>
-                    <td>{{tag}}</td>
-                </tr>
-            {{/commits}}
-        </table>
+        <div id="wrapper">
+            <h1>Changelog</h1>
+            <ul>
+                {{#tags}}
+                    <li><a href="#{{.}}">{{.}}</a></li>
+                {{/tags}}
+            </ul>
+            <table>
+                {{#commits}}
+                    {{#tag}}
+                    </table>
+                    <h2>
+                        <a href="#{{tag}}" id="{{tag}}">#</a>
+                        {{tag}}
+                    </h2>
+                    <table>
+                    {{/tag}}
+                    <tr>
+                        <td title="{{hash}}">{{abbreviatedHash}}</td>
+                        <td>{{authorName}}</td>
+                        <td>{{subject}}</td>
+                        <td>{{date}}</td>
+                    </tr>
+                {{/commits}}
+            </table>
+        </div>
     </body>
 </html>
