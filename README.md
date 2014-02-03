@@ -19,7 +19,7 @@
 
 eg
 
-    $changelogger --destination /destination/path --format html /repo/path
+    $ changelogger --destination /destination/path --format html /repo/path
 
 ## License
 
