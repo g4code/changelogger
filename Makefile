@@ -6,9 +6,8 @@ install:
 pack:
 	@npm pack
 
-publish: version-check change-version git-version
-	@echo "publishing on npm" \
-	&& npm publish
+release: version-check change-version git-version
+	@echo "release $(version) completed"
 
 version-check:
 	@if test "$(version)" = ""; then \
