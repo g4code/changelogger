@@ -2,6 +2,8 @@
 
 > Git changelog generator - [nodejs](http://nodejs.org) library
 
+[![NPM](https://nodei.co/npm/changelogger.png)](https://nodei.co/npm/changelogger/)
+
 ## Install
 
     $ npm install -g changelogger
