@@ -17,7 +17,7 @@
         -h, --help             output usage information
         -V, --version          output the version number
         -d, --destination <n>  destination directory path
-        -f, --format <n>       output format (json, html)
+        -f, --format <n>       output format (json, html, md)
 
 eg
 
