@@ -17,7 +17,8 @@
         -h, --help             output usage information
         -V, --version          output the version number
         -d, --destination <n>  destination directory path
-        -f, --format <n>       output format (json, html, md)
+        -f, --format <n>       output format (json, html, md, bbmd)
+                                 * bbmd stands for BitBucket Markdown
 
 eg
 
