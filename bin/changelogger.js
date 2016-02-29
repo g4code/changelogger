@@ -11,7 +11,7 @@ var Changelogger = require("../lib/changelogger"),
 program.version(packageData.version)
        .usage("[options] [dir]")
        .option('-d, --destination <n>', 'destination directory path')
-       .option('-f, --format <n>', 'output format (json, html, md)')
+       .option('-f, --format <n>', 'output format (json, html, md, bbmd)')
        .parse(process.argv);
 
 var changelogger = new Changelogger();
