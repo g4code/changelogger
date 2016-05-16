@@ -5,3 +5,4 @@ changelogger*.tgz
 .DS_Store
 .settings/*
 playground
+.idea/
